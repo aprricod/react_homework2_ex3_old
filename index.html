@@ -18,16 +18,17 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-      function App() {
-        let [a, setName] = React.useState("");
-        let nameChanged = (e) => setName(e.target.value);
+      function count() {
+        let n = Number.parseInt(document.getElementById("num").value);
+        let sum = (n * (n + 1)) / 2;
+        console.log("Сумма: " + sum);
+      }
 
+      function App() {
         return (
           <div>
-            <p>
-              <h1>Задание {(a * (a + 1)) / 2}</h1>
-            </p>
-            <input type="number" value={a} onChange={nameChanged} />
+            <input type="number" id="num" name="num" />
+            <button onClick={count}>Результат</button>
           </div>
         );
       }
@@ -80,4 +81,21 @@
     );
   }
   ReactDOM.render(App(), document.getElementById("root"));
+</script> -->
+
+<!-- <script type="text/babel">
+  function App() {
+    let [a, setName] = React.useState("");
+    let nameChanged = (e) => setName(e.target.value);
+
+    return (
+      <div>
+        <p>
+          <h1>Задание {(a * (a + 1)) / 2}</h1>
+        </p>
+        <input type="number" value={a} onChange={nameChanged} />
+      </div>
+    );
+  }
+  ReactDOM.render(<App />, document.getElementById("root"));
 </script> -->
